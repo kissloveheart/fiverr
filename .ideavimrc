@@ -1,0 +1,168 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+"""" Surround Plugin  --------------------------------
+ " Emulates vim-surround. Mappings to easily delete, change and add such surroundings in pairs
+ " Basic Commands:
+ "   cs   Change surroundings
+ "   cst  Change surroundings tag
+ "   ds   Delete surroundings
+ "   dst  Delete surroundings tag
+ "   ysiw)   Surround text object
+ " See https://github.com/tpope/vim-surround/blob/master/doc/surround.txt for details"" Plugins  --------------------------------
+set surround
+""" multiple-cursors plugin  --------------------------------
+" Emulates vim-multiple-cursors
+" Basic Commands:
+"   <C-n> start multicursor
+"   <C-n> next match
+"   <C-x> skip next match
+"   <C-p> remove current match and go back to previous one
+" See https://github.com/terryma/vim-multiple-cursors for details
+set multiple-cursors
+"set commentary
+"https://github.com/tpope/vim-commentary/blob/master/doc/commentary.txt
+"This plugin provides a text-object 'a' (argument). You can
+"d(elete), c(hange), v(select)... an argument or inner argument in familiar ways.
+"That is, such as 'daa'(delete-an-argument) 'cia'(change-inner-argument) 'via'(select-inner-argument).
+set argtextobj
+set easymotion
+""" textobj-entire plugin  --------------------------------
+" Emulates  vim-textobj-entire
+" Basic Commands:
+"   {motion}ae    Apply motion on entire text
+"   {motion}ie    Apply motion on entire text w/o trailing and leading empty lines
+" See https://github.com/kana/vim-textobj-entire for details
+set textobj-entire
+set ReplaceWithRegister
+""" IdeaVim Quickscope
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set clipboard+=ideaput
+set number relativenumber
+set ignorecase
+""" The Escape button
+map <C-c> <Esc>
+inoremap kj <Esc>
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Navigation
+"map <C-\> <Action>(SplitVertically)
+map <TAB> <Action>(PreviousTab)
+map <S-TAB> <Action>(NextTab)
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+"noremap [[ :action MethodUp<CR>
+"nnoremap ]] :action MethodDown<CR>
+
+""" Vim mapping
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+inoremap <C-k> <C-o>D
+
+""" Mappings --------------------------------
+map gb <Action>(Back)
+map <S-g>b <Action>(Forward)
+map gf <Action>(GotoFile)
+"map gr <Action>(ReformatCode)
+map go <Action>(OptimizeImports)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(QuickImplementations)
+map gs <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
+map gt <Action>(FileStructurePopup)
+map gu <Action>(ShowUsages)
+map ge <Action>(GotoNextError)
+map <S-g>e <Action>(GotoPreviousError)
+
+map <leader>f <Plug>(easymotion-s)
+map <leader>v <Plug>(easymotion-f)
+map <leader>d <Action>(Debug)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>bb <Action>(ToggleBreakpointEnabled)
+map <leader>g <Action>(ActivateVersionControlToolWindow)
+map <leader>t <Action>(ActivateTerminalToolWindow)
+"map <leader>h <Action>(HideActiveWindow)
+map <leader>r <Action>(ActivateRunToolWindow)
+map <leader>rf <Action>(ReformatCode)
+map <leader>y <Action>(ActivateServicesToolWindow)
+"map <leader>u <Action>(ActivateDebugToolWindow)
+map <leader>e <Action>(RecentFiles)
+map <leader>p <Action>(Stop)
+map <leader>c <Action>(ChooseRunConfiguration)
+map <leader>z <Action>(ChangesView.Revert)
+map <leader>w <Action>(CloseContent)
+map <leader>wn <Action>(NextSplitter)
+map <leader>ws <Action>(SplitVertically)
+map <leader>wu <Action>(CloseAllUnmodifiedEditors)
+map <leader>wr <Action>(MoveTabRight)
+
+
+""" Map to debug
+map ,e <Action>(QuickEvaluateExpression)
+map ,d <Action>(DebugClass)
+map ,r <Action>(Resume)
+map ,n <Action>(StepOver)
+map ,i <Action>(StepInto)
+map ,c <Action>(RunToCursor)
+
+""" Configuring conflicting keys via .ideavimrc
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+sethandler <C-6> a:ide
+sethandler <C-S-6> a:ide
+sethandler <C-;> a:ide
+sethandler <C-S-;> a:ide
+sethandler <C-A> a:ide
+sethandler <C-B> a:ide
+sethandler <C-C> n-v:ide i:vim
+sethandler <C-D> i:vim
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:ide
+sethandler <C-H> i:vim
+sethandler <C-I> a:ide
+sethandler <C-J> a:ide
+sethandler <C-K> i:vim
+sethandler <C-L> a:ide
+sethandler <C-M> a:ide
+sethandler <C-N> a:ide
+sethandler <C-O> i:vim
+sethandler <C-P> a:ide
+sethandler <C-Q> a:ide
+sethandler <C-R> i:vim
+sethandler <C-S> a:ide
+sethandler <C-T> a:ide
+sethandler <C-U> i:ide
+sethandler <C-X> a:ide
+sethandler <C-W> i:vim
+sethandler <C-U> i:vim
+sethandler <C-V> n-v:vim i:ide
+sethandler <C-Y> a:ide
+sethandler <C-[> a:ide
+sethandler <C-\> a:vim
+sethandler <C-]> a:ide
+sethandler <C-/> a:ide
+sethandler <C-S-/> a:ide
+sethandler <S-TAB> i:ide
