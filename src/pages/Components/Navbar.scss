@@ -1,0 +1,53 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #013914;
+  color: white;
+  flex-direction: column;
+
+  .container {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+
+      .text {
+      }
+
+      .dot {
+        color: #1dbf73;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 500;
+
+      button {
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid white;
+        cursor: pointer;
+        background-color: transparent;
+
+        &:hover {
+          background-color: #1dbf73;
+          border-color: #1dbf73;
+        }
+      }
+    }
+  }
+  .menu{
+    width: 1000px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
