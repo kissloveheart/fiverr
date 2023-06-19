@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import reactLogo from '../../asset/images/React.png';
 import "./Navbar.scss"
 // import {Link} from "react-router-dom";
 
@@ -39,7 +38,7 @@ const Navbar = () => {
           {!currentUser && <button>Join</button>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img src={reactLogo} alt=""/>
+              <img src="./public/images/React.png" alt=""/>
               <span>{currentUser.username}</span>
               {open &&
                 <div className="options">
