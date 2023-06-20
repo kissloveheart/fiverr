@@ -1,17 +1,18 @@
 import React from "react";
+import "./Featured.scss"
 
 const Featured = () => {
   return (
     <div className="featured">
       <div className="container">
         <div className="left">
-          <h1>Find the perfect freelance services for your business</h1>
+          <h1>Find the perfect <i>freelance</i> services for your business</h1>
           <div className="search">
             <div className="searchInput">
-              <img src="" alt=""/>
+              <img src="./images/search.png" alt=""/>
               <input type="text" placeholder='Try "build your project"'/>
-              <button>Search</button>
             </div>
+            <button>Search</button>
           </div>
           <div className="popular">
             <span>Popular:</span>
@@ -22,9 +23,11 @@ const Featured = () => {
           </div>
         </div>
         <div className="right">
-
+          <img src="./images/man.png" alt=""/>
         </div>
       </div>
     </div>
   )
 }
+
+export default Featured

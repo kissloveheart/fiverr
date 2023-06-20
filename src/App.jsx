@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Components/navbar/Navbar.jsx";
 import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import Footer from "./Components/footer/Footer.jsx";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/homes/Home.jsx";
 import Gigs from "./pages/gigs/Gigs.jsx";
 import Gig from "./pages/gig/Gig.jsx";
 import Orders from "./pages/orders/Orders.jsx";

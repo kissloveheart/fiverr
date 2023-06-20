@@ -78,7 +78,8 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-inoremap <C-k> <C-o>d$
+inoremap <C-k> <Esc>ld$a
+inoremap <C-j> :action EditorDelete<CR>
 
 """ Mappings --------------------------------
 map gb <Action>(Back)
@@ -118,6 +119,7 @@ map <leader>wn <Action>(NextSplitter)
 map <leader>ws <Action>(SplitVertically)
 map <leader>wu <Action>(CloseAllUnmodifiedEditors)
 map <leader>wr <Action>(MoveTabRight)
+map <leader>wa <Action>(CloseAllEditors)
 
 map <leader>fn <Action>(NewFile)
 map <leader>fd <Action>(NewDir)
@@ -148,7 +150,7 @@ sethandler <C-F> a:ide
 sethandler <C-G> a:ide
 sethandler <C-H> i:vim
 sethandler <C-I> a:ide
-sethandler <C-J> a:ide
+sethandler <C-J> i:vim n-v:ide
 sethandler <C-K> i:vim n-v:ide
 sethandler <C-L> a:ide
 sethandler <C-M> a:ide
@@ -156,7 +158,7 @@ sethandler <C-N> a:ide
 sethandler <C-O> i:vim
 sethandler <C-P> a:ide
 sethandler <C-Q> a:ide
-sethandler <C-R> i:vim
+sethandler <C-R> i:vim n-v:ide
 sethandler <C-S> a:ide
 sethandler <C-T> a:ide
 sethandler <C-U> i:ide
