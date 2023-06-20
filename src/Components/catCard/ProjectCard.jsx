@@ -3,7 +3,7 @@ import "./ProjectCard.scss"
 import {Link} from "react-router-dom";
 const ProjectCard = ({item}) => {
   return (
-    <Link to="/gigs?project=design">
+    <Link to="/gigs?project=design" className="link">
       <div className="projectCard">
         <div className="projectCard">
           <img src={item.img} alt=""/>

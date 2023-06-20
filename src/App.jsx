@@ -10,6 +10,7 @@ import MyGigs from "./pages/myGigs/MyGigs.jsx";
 import Add from "./pages/add/Add.jsx";
 import Message from "./pages/message/Message.jsx"
 import Messages from "./pages/messages/Messages.jsx";
+import "./App.scss"
 
 function App() {
   const Layout = () => {

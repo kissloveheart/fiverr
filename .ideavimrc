@@ -115,7 +115,7 @@ map <leader>p <Action>(Stop)
 map <leader>c <Action>(ChooseRunConfiguration)
 map <leader>z <Action>(ChangesView.Revert)
 map <leader>w <Action>(CloseContent)
-map <leader>wn <Action>(NextSplitter)
+map <C-W> <Action>(NextSplitter)
 map <leader>ws <Action>(SplitVertically)
 map <leader>wu <Action>(CloseAllUnmodifiedEditors)
 map <leader>wr <Action>(MoveTabRight)
@@ -163,7 +163,7 @@ sethandler <C-S> a:ide
 sethandler <C-T> a:ide
 sethandler <C-U> i:ide
 sethandler <C-X> a:ide
-sethandler <C-W> i:vim
+sethandler <C-W> a:vim
 sethandler <C-U> i:vim
 sethandler <C-V> n-v:vim i:ide
 sethandler <C-Y> i:vim
