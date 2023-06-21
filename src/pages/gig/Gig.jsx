@@ -2,7 +2,7 @@ import React from "react";
 
 const Gig = () => {
   return (
-    <div>Gig</div>
+    <p>hihi</p>
   )
 }
 export default Gig
